@@ -1,0 +1,18 @@
+mirrors:
+  # ---- 道客 DaoCloud 加速(作为 docker.io 的代理) ----
+  docker.io:
+    endpoint:
+      - "{{ daocloud_mirror }}"
+
+  # ---- 内网私有仓库 ----
+  "{{ registry_addr }}":
+    endpoint:
+      - "http://{{ registry_addr }}"
+
+configs:
+  "{{ registry_addr }}":
+    tls:
+      insecure_skip_verify: true
+  "docker.io":
+    tls:
+      insecure_skip_verify: true

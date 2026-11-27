@@ -1,0 +1,13 @@
+---
+# 私有仓库配置
+registry_host: "192.168.199.101"
+registry_port: "5000"
+registry_addr: "{{ registry_host }}:{{ registry_port }}"
+
+# 是否搭建私有仓库（true=搭，false=跳过）
+setup_registry: true
+
+
+  # ---- 新增：道客 DaoCloud 代理 ----
+setup_daocloud_mirror: true
+daocloud_mirror: "https://docker.m.daocloud.io"
